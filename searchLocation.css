@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    background-image: url(water.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.searchL{
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+h1{
+    font-size: 3rem;
+    color: black;
+    backdrop-filter: drop-shadow(10px 10px 25px black);
+    margin-top: 130px;
+}
+
+img{
+    width: 35px;
+}
+
+button{
+    height: 54px;
+    width: 54px;
+    padding: 10px;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(122, 220, 240);
+}
+
+button:hover{
+    background-color: rgb(58, 188, 214);
+}
+
+input{
+    height: 50px;
+    width: 900px;
+    padding: 0;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+}
+
+.hudai{
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    width: 55%;
+    height: 70px;
+    background-color: rgba(197, 244, 252, 0.849);
+    border-radius: 35px;
+    margin-bottom: 200px;
+}

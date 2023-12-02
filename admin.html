@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Water Quality Admin Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <span class="username-clickable">Admin</span>
+      <button id="viewTicketsButton" class="small-button">View Support Tickets</button>
+
+    </div>
+    <div class="main-content">
+      <h1 class="dashboard-title">Dashboard</h1>
+      <div class="search-section">
+        <div class="search-container">
+          <input type="text" placeholder="Search by ID" class="search-field">
+          <button id="searchButton" class="search-button">&#x1F50D;</button>
+        </div>
+        <table class="user-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Account Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="selectable-row">
+              <td>101</td>
+              <td>John Doe</td>
+              <td>Researcher</td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+      </div>
+      <div class="user-details">
+        <h2>User Details:</h2>
+        <div class="detail-item">
+          <label for="userId">ID:</label>
+          <input type="text" id="userId" value="101">
+        </div>
+        <div class="detail-item">
+          <label for="userName">Name:</label>
+          <input type="text" id="userName" value="John Doe">
+        </div>
+        <div class="detail-item">
+          <label for="userAccountType">Account Type:</label>
+          <input type="text" id="userAccountType" value="Admin">
+        </div>
+        <div class="detail-item">
+          <label for="userEmail">Email:</label>
+          <input type="text" id="userEmail" value="johndoe@example.com">
+        </div>
+        <div class="detail-item">
+          <label for="userPhone">Phone No.:</label>
+          <input type="text" id="userPhone" value="123-456-7890">
+        </div>
+        <div class="detail-item">
+          <label for="userPassword">Password:</label>
+          <input type="password" id="userPassword" value="Password123">
+        </div>
+        <button id="saveButton">Save</button>
+        <a href="file:///Users/farhantamzid/Desktop/PS3/AdminSubmittedData.html" target="_blank">
+            <button id="viewDataButton">View Submitted Data</button>
+          </a>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const rows = document.querySelectorAll('.selectable-row');
+
+      rows.forEach(row => {
+        row.addEventListener('click', function() {
+          rows.forEach(r => r.classList.remove('selected'));
+          this.classList.add('selected');
+        });
+      });
+
+      document.getElementById('searchButton').addEventListener('click', function() {
+        // Add search functionality here
+        // For demonstration, the search button doesn't perform any action in this example
+        alert('Search functionality will be implemented.');
+      });
+
+      document.getElementById('saveButton').addEventListener('click', function() {
+        const userDetails = document.querySelectorAll('.user-details input');
+        const detailsSection = document.querySelector('.user-details');
+        
+        let detailsHTML = '<h2>User Details:</h2>';
+        userDetails.forEach(item => {
+          detailsHTML += `
+            <div class="detail-item">
+              <label for="${item.id}">${item.previousElementSibling.textContent}:</label>
+              <input type="${item.type}" id="${item.id}" value="${item.value}">
+            </div>`;
+        });
+        detailsHTML += '<button id="saveButton">Save</button>';
+        detailsSection.innerHTML = detailsHTML;
+      });
+    });
+  </script>
+</body>
+</html>
